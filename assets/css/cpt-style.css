@@ -1,0 +1,81 @@
+label[class*=wpmon-] {
+	margin-top: 1em;
+}
+
+label[class*=wpmon-], label[class*=wpmon-] + input, label[class*=wpmon-] + textarea {
+	display: block;
+	width: 50% !important;
+}
+
+label[class*=wpmon-] + input[type=checkbox] {
+	display: inline-block;
+	width: inherit !important;
+	margin-top: 1em;
+}
+
+span.wpmon-cpt-checkbox-span {
+	font-size:.8em;
+	font-weight:bold;
+	color:#DA5252;
+	font-style:italic;
+	margin-left:1em;
+	position: relative;
+	top: .8em;
+}
+
+input[class*=wpmon-] {
+	margin-bottom: 1.25em;
+	width:50%;
+}
+
+label[class*=wpmon-cpt-checkbox], input[type=checkbox][class*=wpmon-cpt-checkbox] {
+	display: inline-block;
+}
+
+input[type=checkbox][class*=wpmon-cpt-checkbox] {
+	position: relative;
+	top: .75em;
+	margin-left: 1em;
+}
+
+#poststuff .html-block h3 {
+	padding-left: 0;
+}
+
+.shortcode-display {
+	font-weight: bold;
+}
+
+.field_key-field_53863d8c3f09a {
+	display: none;
+}
+
+.wpmon_btn_url {
+	clear:both;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.wpmon_btn_url:before {
+	margin-left: 0 !important;
+}
+
+.url-link-btn.vc_btn.vc_btn-primary {
+	padding: 3px 12px;
+	margin-top: 5px;
+}
+
+.wpmon-cpt-select {
+	display: block;
+	margin: 10px 0 0;
+}
+
+.wpmon-cpt-select span {
+	display: block;
+}
+
+.wpmon-cat-multi-select-box {
+	min-width: 200px;
+}
