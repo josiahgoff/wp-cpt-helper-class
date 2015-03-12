@@ -17,7 +17,7 @@ class Custom_Post_Type
 	public $post_type_prefix;
 	
 	/* Class constructor */
-	public function __construct( $name='', $prefix='wpmon', $args = array(), $labels = array(), $nicename = '', $hide_extra = true )
+	public function __construct( $name='', $prefix='wpmon', $args = array(), $labels = array(), $nicename = '', $hide_extra = false )
 	{
 		$post_type_prefix = $this->post_type_prefix = $prefix;
 		
@@ -45,14 +45,14 @@ class Custom_Post_Type
 		// Listen for the save post hook
 		$this->save();
 	}
-	
+		
 	/* Method which registers the post type */
 	public function register_post_type()
 	{
 		//Capitilize the words and make it plural
 		//$name       = ucwords( str_replace( '_', ' ', $this->post_type_name ) );
 		$name 		= $this->post_type_nicename;
-		$plural     = $name . 's';
+		$plural     = self::pluralize( $name );
 		
 		// We set the default labels based on the post type name and plural. We overwrite them with the given labels.
 		$labels = array_merge(
@@ -120,7 +120,7 @@ class Custom_Post_Type
 			{
 		        //Capitilize the words and make it plural
 				$name       = ucwords( str_replace( '_', ' ', $name ) );
-				$plural     = $name . 's';
+				$plural     = self::pluralize( $name );
 				 
 				// Default labels, overwrite them with the given labels.
 				$labels = array_merge(
@@ -555,6 +555,25 @@ class Custom_Post_Type
 		if($post_type == $this->post_type_name) {
 			echo '<style type="text/css">#edit-slug-box,#view-post-btn,#post-preview,.updated p a{display: none;}</style>';
 		}
+	}
+	
+	public static function pluralize( $string )
+	{
+	    $last = $string[strlen( $string ) - 1];
+	     
+	    if( $last == 'y' )
+	    {
+	        $cut = substr( $string, 0, -1 );
+	        //convert y to ies
+	        $plural = $cut . 'ies';
+	    }
+	    else
+	    {
+	        // just attach an s
+	        $plural = $string . 's';
+	    }
+	     
+	    return $plural;
 	}
 }
 ?>
