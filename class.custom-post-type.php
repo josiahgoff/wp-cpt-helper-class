@@ -245,9 +245,6 @@ class Custom_Post_Type
 				                        case 'text':
 					                        echo '<label class="wpmon-cpt-text-field ' . $field_id_name . '" for="' . $field_id_name . '">' . $label . '</label> <input type="text" name="custom_meta[' . $field_id_name . ']" id="' . $field_id_name . '" value="' . $meta[$field_id_name][0] . '" />';
 					                        break;
-					                    case 'hidden-text':
-					                        echo '<input type="hidden" class="wpmon-cpt-text-field ' . $field_id_name . '" name="custom_meta[' . $field_id_name . ']" id="' . $field_id_name . '" value=\'' . $meta[$field_id_name][0] . '\' />';
-					                        break;
 					                    case 'textarea':
 					                        echo '<label class="wpmon-cpt-textarea ' . $field_id_name . '" for="' . $field_id_name . '">' . $label . '</label> <textarea name="custom_meta[' . $field_id_name . ']" id="' . $field_id_name . '">' . $meta[$field_id_name][0] . '</textarea>';
 					                        break;
